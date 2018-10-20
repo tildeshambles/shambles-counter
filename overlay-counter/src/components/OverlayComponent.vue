@@ -13,7 +13,10 @@ import CounterComponent from "@/components/CounterComponent.vue";
 import NotificationComponent from "@/components/NotificationComponent.vue";
 import { mapState } from "vuex";
 
-import { CounterPosition, CounterAlignment } from "@/store";
+import {
+  CounterPosition,
+  CounterAlignment
+} from "@/store/mutations/app.mutations";
 
 export default {
   name: "OverlayComponent",

@@ -52,7 +52,10 @@
 </template>
 
 <script>
-import { CounterAlignment, CounterPosition } from "@/store";
+import {
+  CounterAlignment,
+  CounterPosition
+} from "@/store/mutations/app.mutations";
 import { mapState } from "vuex";
 
 export default {

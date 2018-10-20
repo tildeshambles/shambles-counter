@@ -10,7 +10,7 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import { NOTIFICATION_DISMISS } from "@/store";
+import { NOTIFICATION_DISMISS } from "@/store/mutations/notification.mutations";
 
 export default {
   name: "NotificationComponent",

@@ -8,7 +8,7 @@
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
-import { APP_INIT } from "@/store";
+import { APP_INIT } from "@/store/actions";
 
 export default {
   name: "app",

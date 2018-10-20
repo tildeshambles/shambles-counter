@@ -1,5 +1,5 @@
 <template>
-    <div><span class="counter">{{ counter }}</span><span class="label">{{ label }}</span></div>
+    <div v-if="showOnZero || counter > 0"><span class="counter">{{ counter }}</span><span class="label">{{ label }}</span></div>
 </template>
 <script>
 import { mapState, mapGetters } from "vuex";
@@ -7,7 +7,7 @@ import { mapState, mapGetters } from "vuex";
 export default {
   name: "CounterComponent",
   computed: {
-    ...mapState(["counter"]),
+    ...mapState(["counter", "showOnZero"]),
     ...mapGetters(["label"])
   }
 };

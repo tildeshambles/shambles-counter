@@ -12,6 +12,9 @@ server({ port }, [
 
     socket('counter_label', ctx => ctx.io.emit('counter_label', ctx.data)),
     socket('counter_position', ctx => ctx.io.emit('counter_position', ctx.data)),
-    socket('counter_alignment', ctx => ctx.io.emit('counter_alignment', ctx.data))
+    socket('counter_alignment', ctx => ctx.io.emit('counter_alignment', ctx.data)),
+
+    socket('counter_milestone_add', ctx => ctx.io.emit('counter_milestone_add', ctx.data)),
+    socket('counter_milestone_delete', ctx => ctx.io.emit('counter_milestone_delete', ctx.data))
 
 ]).then(() => console.log(`Server running at http://localhost:${port}`))

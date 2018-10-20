@@ -10,7 +10,7 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import { NOTIFICATION_DISMISS } from "@/store";
+import { NOTIFICATION_DISMISS } from "@/store/mutations/notification.mutations";
 
 export default {
   name: "NotificationComponent",
@@ -33,7 +33,9 @@ export default {
     }
   },
   mounted() {
-    this.audio.play();
+    if (this.audio) {
+      this.audio.play();
+    }
     setTimeout(() => {
       this.dismiss();
     }, 5000);

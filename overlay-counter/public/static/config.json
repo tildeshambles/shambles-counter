@@ -1,8 +1,11 @@
 {
     "counterInitial": 0,
+    "showOnZero": true,
     "labelSingular": "death",
     "labelPlural": "deaths",
     "position": "bottom",
     "alignment": "center",
-    "notifications":[]
+    "notifications":[
+
+    ]
 }

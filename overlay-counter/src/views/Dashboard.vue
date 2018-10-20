@@ -5,11 +5,11 @@
     </header>
     <section class="controls">
       <div class="controls-left">
-        <button class="btn btn-success btn-lg" @click="emit('increment')">Add</button>
-        <button class="btn btn-danger btn-lg" @click="emit('decrease')">Minus</button>
+        <button class="btn btn-success btn-lg" @click="emit(SocketTypes.Increment)">Add</button>
+        <button class="btn btn-danger btn-lg" @click="emit(SocketTypes.Decrease)">Minus</button>
       </div>
       <div class="controls-right">
-        <button class="btn btn-primary btn-lg" @click="emit('reset')">Reset</button>
+        <button class="btn btn-primary btn-lg" @click="emit(SocketTypes.Reset)">Reset</button>
       </div>
     </section>
     <div class="content-container">
@@ -34,13 +34,13 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="position">Position</label>
-                <select id="position" class="form-control" :value="position" @change="emit('counter_position', $event.target.value)">
+                <select id="position" class="form-control" :value="position" @change="emit(SocketTypes.CounterPosition, $event.target.value)">
                   <option v-for="(entry, key) in CounterPosition" :key="key">{{ key }}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="alignment">Alignment</label>
-                <select id="alignment" class="form-control" :value="alignment" @change="emit('counter_alignment', $event.target.value)">
+                <select id="alignment" class="form-control" :value="alignment" @change="emit(SocketTypes.CounterAlignment, $event.target.value)">
                   <option v-for="(entry, key) in CounterAlignment" :key="key">{{ key }}</option>
                 </select>
               </div>
@@ -56,6 +56,7 @@ import {
   CounterAlignment,
   CounterPosition
 } from "@/store/mutations/app.mutations";
+import { SocketTypes } from "@/store/mutations/socket.mutations";
 import { mapState } from "vuex";
 
 export default {
@@ -64,6 +65,7 @@ export default {
     return {
       CounterAlignment,
       CounterPosition,
+      SocketTypes,
       singular: null,
       plural: null
     };
@@ -80,7 +82,7 @@ export default {
         labelSingular: this.singular,
         labelPlural: this.plural
       };
-      this.emit("counter_label", data);
+      this.emit(SocketTypes.CounterLabel, data);
     }
   },
   created() {

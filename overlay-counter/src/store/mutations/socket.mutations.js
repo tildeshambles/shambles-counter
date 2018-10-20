@@ -3,6 +3,17 @@ import {
   CounterAlignment
 } from "@/store/mutations/app.mutations";
 
+const SocketTypes = {
+  Increment: "increment",
+  Decrease: "decrease",
+  Reset: "reset",
+  CounterPosition: "counter_position",
+  CounterAlignment: "counter_alignment",
+  CounterLabel: "counter_label"
+};
+Object.freeze(SocketTypes);
+export { SocketTypes };
+
 export const SOCKET_INCREMENT = "SOCKET_INCREMENT";
 export const SOCKET_DECREASE = "SOCKET_DECREASE";
 export const SOCKET_RESET = "SOCKET_RESET";

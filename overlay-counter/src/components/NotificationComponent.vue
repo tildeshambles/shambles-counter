@@ -33,7 +33,9 @@ export default {
     }
   },
   mounted() {
-    this.audio.play();
+    if (this.audio) {
+      this.audio.play();
+    }
     setTimeout(() => {
       this.dismiss();
     }, 5000);

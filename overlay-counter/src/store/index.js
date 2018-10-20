@@ -18,6 +18,7 @@ export default new Vuex.Store({
     position: null,
     alignment: null,
     errors: [],
+    showOnZero: true,
     notifications: [],
     notificationData: null
   },

@@ -31,6 +31,10 @@ export const AppMutations = {
       state.position = CounterPosition.top;
     }
 
+    if (config.showOnZero !== undefined) {
+      state.showOnZero = config.showOnZero;
+    }
+
     state.alignment = CounterAlignment.center;
     if (config.alignment) {
       if (config.alignment === CounterAlignment.left) {

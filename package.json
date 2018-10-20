@@ -1,0 +1,19 @@
+{
+  "name": "shambles-counter",
+  "version": "1.0.0",
+  "description": "A simple death counter overlay to import as a HTML source in OBS or XSplit. Control the display of it using your phone or computer.",
+  "keywords":["obs", "twitch", "mixer", "xsplit", "streamer tools"],
+  "homepage":"https://shambles.gg",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "nodemon -i shambles-count/ server.js",
+    "start:client": "cd overlay-counter && npm run serve"
+  },
+  "author": "Tilde Shambles",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "nodemon": "^1.18.4",
+    "server": "^1.0.18"
+  }
+}

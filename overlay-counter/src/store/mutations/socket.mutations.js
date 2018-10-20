@@ -9,7 +9,9 @@ const SocketTypes = {
   Reset: "reset",
   CounterPosition: "counter_position",
   CounterAlignment: "counter_alignment",
-  CounterLabel: "counter_label"
+  CounterLabel: "counter_label",
+  CounterMilestoneAdd: "counter_milestone_add",
+  CounterMilestoneDelete: "counter_milestone_delete"
 };
 Object.freeze(SocketTypes);
 export { SocketTypes };
@@ -20,6 +22,9 @@ export const SOCKET_RESET = "SOCKET_RESET";
 export const SOCKET_COUNTER_LABEL = "SOCKET_COUNTER_LABEL";
 export const SOCKET_COUNTER_POSITION = "SOCKET_COUNTER_POSITION";
 export const SOCKET_COUNTER_ALIGNMENT = "SOCKET_COUNTER_ALIGNMENT";
+export const SOCKET_COUNTER_MILESTONE_ADD = "SOCKET_COUNTER_MILESTONE_ADD";
+export const SOCKET_COUNTER_MILESTONE_DELETE =
+  "SOCKET_COUNTER_MILESTONE_DELETE";
 
 export const SocketMutations = {
   [SOCKET_INCREMENT]: state => {
@@ -58,5 +63,15 @@ export const SocketMutations = {
   [SOCKET_COUNTER_LABEL]: (state, data) => {
     state.labelSingular = data[0].labelSingular;
     state.labelPlural = data[0].labelPlural;
+  },
+  [SOCKET_COUNTER_MILESTONE_ADD]: (state, data) => {
+    const update = [...state.notifications, data[0]];
+    update.sort((a, b) => a.target - b.target);
+    state.notifications = update;
+  },
+  [SOCKET_COUNTER_MILESTONE_DELETE]: (state, data) => {
+    const update = [...state.notifications];
+    update.splice(data[0], 1);
+    state.notifications = update;
   }
 };

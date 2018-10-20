@@ -4,5 +4,7 @@ export default {
       return state.labelSingular;
     }
     return state.labelPlural;
-  }
+  },
+  findNotification: state => target =>
+    state.notifications.find(i => i.target === target)
 };

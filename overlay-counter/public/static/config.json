@@ -4,5 +4,7 @@
     "labelPlural": "deaths",
     "position": "bottom",
     "alignment": "center",
-    "notifications":[]
+    "notifications":[
+
+    ]
 }
